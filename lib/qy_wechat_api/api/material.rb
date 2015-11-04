@@ -25,7 +25,7 @@ module QyWechatApi
       def add_material(agent_id, type, file)
         check_masterial_type(type)
         file = process_file(file)
-        http_post("upload", {media: file}, {type: type, agentid: agent_id})
+        http_post("add_material", {media: file}, {type: type, agentid: agent_id})
       end
 
       # 删除永久素材
