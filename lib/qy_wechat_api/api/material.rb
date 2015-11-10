@@ -24,7 +24,8 @@ module QyWechatApi
       # https://qyapi.weixin.qq.com/cgi-bin/material/add_material?agentid=AGENTID&type=TYPE&access_token=ACCESS_TOKEN
       def add_material(agent_id, type, file)
         check_masterial_type(type)
-        http_post("upload", {media: file}, {type: type, agentid: agent_id})
+        file = process_file(file)
+        http_post("add_material", {media: file}, {type: type, agentid: agent_id})
       end
 
       # 删除永久素材

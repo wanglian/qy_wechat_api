@@ -45,6 +45,10 @@ module QyWechatApi
     def media
       Api::Media.new(get_access_token)
     end
+    
+    def material
+      Api::Material.new(get_access_token)
+    end
 
     def message
       Api::Message.new(get_access_token)
